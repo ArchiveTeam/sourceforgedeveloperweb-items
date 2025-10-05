@@ -1,0 +1,6 @@
+~/little-things/ia-cdx-search --concurrency 4 --tries 10 'url=users.sf.net&collapse=urlkey&fl=original&matchType=domain' | jq -r .original | zstd -10 -o users.sf.net-cdx-urls.txt.zst
+~/little-things/ia-cdx-search --concurrency 4 --tries 10 'url=users.sourceforge.net&collapse=urlkey&fl=original&matchType=domain' | jq -r .original | zstd -10 -o users.sourceforge.net-cdx-urls.txt.zst
+~/little-things/ia-cdx-search --concurrency 4 --tries 10 'url=sf.net/u/&collapse=urlkey&fl=original&matchType=prefix' | jq -r .original | zstd -10 -o sf.net_u-cdx-urls.txt.zst
+~/little-things/ia-cdx-search --concurrency 4 --tries 10 'url=sourceforge.net/u/&collapse=urlkey&fl=original&matchType=prefix' | jq -r .original | zstd -10 -o sourceforge.net_u-cdx-urls.txt.zst
+~/little-things/ia-cdx-search --concurrency 4 --tries 10 'url=sf.net/users/&collapse=urlkey&fl=original&matchType=prefix' | jq -r .original | zstd -10 -o sf.net_users-cdx-urls.txt.zst
+~/little-things/ia-cdx-search --concurrency 4 --tries 10 'url=sourceforge.net/users/&collapse=urlkey&fl=original&matchType=prefix' | jq -r .original | zstd -10 -o sourceforge.net_users-cdx-urls.txt.zst
