@@ -42,13 +42,13 @@ def main(filepath: str):
             '/(?:u|users)/('+USER_PATTERN+')',
             '('+USER_PATTERN+r')[@\.]users\.'
         ):
-           for s in re.findall(pattern, line):
+           for s in re.findall(pattern, line, re.I):
                 add_user(s)
-        if re.search('^https?://', line):
+        if re.search('^https?://', line, re.I):
             if line.count('/') == 2:
                 line += '/'
             result = re.search(
-                r'^https?://([^\.]+)\.users\.(?:sourceforge|sf)\.(?:net|io)(/[^#]+)', line)
+                r'^https?://([^\.]+)\.users\.(?:sourceforge|sf)\.(?:net|io)(/[^#]+)', line, re.I)
             if result:
                 user, path = result.groups()
                 assert re.match('^' + USER_PATTERN + '$', user)
